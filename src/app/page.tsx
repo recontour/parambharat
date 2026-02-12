@@ -11,6 +11,14 @@ function HeroSection() {
   return (
     <section className="w-full py-20 md:py-32 lg:py-40 bg-background">
       <div className="container mx-auto px-4 md:px-6 text-center">
+        <Image
+          src="/param-bharat-logo.png"
+          alt="Param Bharat Logo"
+          width={250}
+          height={250}
+          className="mx-auto mb-6"
+          priority
+        />
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-normal tracking-tighter mb-4 flex flex-col items-center">
           <span className="font-param text-black">PARAM</span>
           <span className="font-bharat text-black">Bharat</span>
