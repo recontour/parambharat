@@ -20,6 +20,8 @@ export default {
         body: ['PT Sans', 'sans-serif'],
         headline: ['Playfair Display', 'serif'],
         code: ['monospace'],
+        atelier: ['Monoton', 'cursive'],
+        luxe: ['Satisfy', 'cursive'],
       },
       colors: {
         background: 'hsl(var(--background))',

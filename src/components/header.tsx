@@ -16,9 +16,9 @@ export function AppHeader() {
         </Link>
         <Link
           href="#"
-          className="text-foreground transition-colors hover:text-foreground font-bold text-lg font-headline"
+          className="text-foreground transition-colors hover:text-foreground font-bold text-lg"
         >
-          Atelier Luxe
+          <span className="font-atelier">Atelier</span> <span className="font-luxe">Luxe</span>
         </Link>
         <Link
           href="#portfolio"
@@ -44,10 +44,10 @@ export function AppHeader() {
           <nav className="grid gap-6 text-lg font-medium">
             <Link
               href="#"
-              className="flex items-center gap-2 text-lg font-semibold font-headline"
+              className="flex items-center gap-2 text-lg font-semibold"
             >
               <Package2 className="h-6 w-6" />
-              <span >Atelier Luxe</span>
+              <span><span className="font-atelier">Atelier</span> <span className="font-luxe">Luxe</span></span>
             </Link>
             <Link href="#portfolio" className="text-muted-foreground hover:text-foreground">
               Portfolio
