@@ -4,7 +4,7 @@ import './globals.css';
 import { cn } from '@/lib/utils';
 
 export const metadata: Metadata = {
-  title: 'Atelier Luxe',
+  title: 'Param Bharat',
   description: 'Design your own luxury bag.',
   icons: {
     icon: '/favicon.ico',

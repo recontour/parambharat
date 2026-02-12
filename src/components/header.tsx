@@ -12,13 +12,13 @@ export function AppHeader() {
           className="flex items-center gap-2 text-lg font-semibold md:text-base font-headline"
         >
           <Package2 className="h-6 w-6" />
-          <span className="sr-only">Atelier Luxe</span>
+          <span className="sr-only">Param Bharat</span>
         </Link>
         <Link
           href="#"
           className="text-foreground transition-colors hover:text-foreground font-bold text-lg"
         >
-          <span className="font-atelier">Atelier</span> <span className="font-luxe">Luxe</span>
+          <span className="font-param">Param</span> <span className="font-bharat">Bharat</span>
         </Link>
         <Link
           href="#portfolio"
@@ -47,7 +47,7 @@ export function AppHeader() {
               className="flex items-center gap-2 text-lg font-semibold"
             >
               <Package2 className="h-6 w-6" />
-              <span><span className="font-atelier">Atelier</span> <span className="font-luxe">Luxe</span></span>
+              <span><span className="font-param">Param</span> <span className="font-bharat">Bharat</span></span>
             </Link>
             <Link href="#portfolio" className="text-muted-foreground hover:text-foreground">
               Portfolio
