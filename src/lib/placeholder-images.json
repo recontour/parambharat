@@ -1,3 +1,64 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "portfolio-1",
+      "description": "Elegant Noir Clutch",
+      "imageUrl": "https://images.unsplash.com/photo-1764846344519-b0e632bf0bd3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxibGFjayUyMGNsdXRjaHxlbnwwfHx8fDE3NzA4ODYzNzR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "black clutch"
+    },
+    {
+      "id": "portfolio-2",
+      "description": "Azure Tote Bag",
+      "imageUrl": "https://images.unsplash.com/photo-1644952273261-3e7b07b0690b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxibHVlJTIwdG90ZXxlbnwwfHx8fDE3NzA4ODYzNzR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "blue tote"
+    },
+    {
+      "id": "portfolio-3",
+      "description": "Crimson Crossbody",
+      "imageUrl": "https://images.unsplash.com/photo-1555703944-c42fb7354910?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxyZWQlMjBoYW5kYmFnfGVufDB8fHx8MTc3MDg0NTM4MHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "red handbag"
+    },
+    {
+      "id": "portfolio-4",
+      "description": "Minimalist White Satchel",
+      "imageUrl": "https://images.unsplash.com/photo-1758499537503-315ca95c010b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHx3aGl0ZSUyMHNhdGNoZWx8ZW58MHx8fHwxNzcwODg2Mzc0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "white satchel"
+    },
+    {
+      "id": "portfolio-5",
+      "description": "Forest Green Handbag",
+      "imageUrl": "https://images.unsplash.com/photo-1649544144796-687d506ddcd8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxncmVlbiUyMGhhbmRiYWd8ZW58MHx8fHwxNzcwODg2Mzc0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "green handbag"
+    },
+    {
+      "id": "portfolio-6",
+      "description": "Golden Hour Shoulder Bag",
+      "imageUrl": "https://images.unsplash.com/photo-1612569188757-48810e631c6c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHx5ZWxsb3clMjBoYW5kYmFnfGVufDB8fHx8MTc3MDg4NjM3NHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "yellow handbag"
+    },
+    {
+      "id": "material-leather-black",
+      "description": "Black Leather",
+      "imageUrl": "https://images.unsplash.com/photo-1585314062340-f1a5a7c9328d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxibGFjayUyMGxlYXRoZXJ8ZW58MHx8fHwxNzcwODg2Mzc0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "black leather"
+    },
+    {
+      "id": "material-leather-brown",
+      "description": "Brown Leather",
+      "imageUrl": "https://images.unsplash.com/photo-1716295177956-420a647c83ac?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxicm93biUyMGxlYXRoZXJ8ZW58MHx8fHwxNzcwODg2Mzc0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "brown leather"
+    },
+    {
+      "id": "material-suede-blue",
+      "description": "Blue Suede",
+      "imageUrl": "https://images.unsplash.com/photo-1636315523766-597f942964b6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxibHVlJTIwc3VlZGV8ZW58MHx8fHwxNzcwODg2Mzc0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "blue suede"
+    },
+    {
+      "id": "material-fabric-pattern",
+      "description": "Patterned Fabric",
+      "imageUrl": "https://images.unsplash.com/photo-1701964619775-b18422290cf9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxwYXR0ZXJuZWQlMjBmYWJyaWN8ZW58MHx8fHwxNzcwODg2Mzc0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "patterned fabric"
+    }
+  ]
 }
