@@ -1,8 +1,8 @@
 
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
-import { AppFooter } from "@/components/AppFooter";
-import { AppHeader } from "@/components/AppHeader";
+import { AppFooter } from "@/components/footer";
+import { AppHeader } from "@/components/header";
 import { EmblaCarousel } from "@/components/EmblaCarousel";
 import { PortfolioItem } from "@/components/PortfolioItem";
 import { portfolio } from "@/lib/data";
