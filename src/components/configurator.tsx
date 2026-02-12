@@ -42,6 +42,8 @@ const designSchema = z.object({
 
 type DesignFormData = z.infer<typeof designSchema>;
 
+const MotionTabsContent = motion(TabsContent);
+
 export function Configurator() {
   const [designState, setDesignState] = useState<DesignState>({
     silhouette: silhouettes[0],
@@ -96,6 +98,13 @@ export function Configurator() {
     if (updates.stitching) methods.setValue('stitching', updates.stitching.id);
     if (updates.stitchingColor) methods.setValue('stitchingColor', updates.stitchingColor.name);
   };
+  
+  const motionProps = {
+    initial: { opacity: 0, y: 10 },
+    animate: { opacity: 1, y: 0 },
+    exit: { opacity: 0, y: -10 },
+    transition: { duration: 0.2 },
+  };
 
   return (
     <FormProvider {...methods}>
@@ -127,89 +136,81 @@ export function Configurator() {
               </ScrollArea>
               
               <AnimatePresence mode="wait">
-                <TabsContent value="silhouette" asChild>
-                    <motion.div key="silhouette" initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }}>
-                        <h3 className="text-xl font-headline mb-4">Choose Your Base</h3>
-                        <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
-                            {silhouettes.map((s) => (
-                                <button type="button" key={s.id} onClick={() => updateDesign({ silhouette: s })} className={cn('p-2 border-2 rounded-lg flex flex-col items-center gap-2 transition-all', designState.silhouette?.id === s.id ? 'border-primary shadow-md' : 'border-transparent hover:border-primary/50')}>
-                                    {s.icon && <Icon name={s.icon} className="w-16 h-16" />}
-                                    <span className="text-sm font-body">{s.name}</span>
+                <MotionTabsContent value="silhouette" key="silhouette" {...motionProps}>
+                    <h3 className="text-xl font-headline mb-4">Choose Your Base</h3>
+                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                        {silhouettes.map((s) => (
+                            <button type="button" key={s.id} onClick={() => updateDesign({ silhouette: s })} className={cn('p-2 border-2 rounded-lg flex flex-col items-center gap-2 transition-all', designState.silhouette?.id === s.id ? 'border-primary shadow-md' : 'border-transparent hover:border-primary/50')}>
+                                {s.icon && <Icon name={s.icon} className="w-16 h-16" />}
+                                <span className="text-sm font-body">{s.name}</span>
+                            </button>
+                        ))}
+                    </div>
+                </MotionTabsContent>
+
+                <MotionTabsContent value="material" key="material" {...motionProps}>
+                    <h3 className="text-xl font-headline mb-4">Select Material</h3>
+                      <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                        {materials.map((m) => (
+                            <button type="button" key={m.id} onClick={() => updateDesign({ material: m })} className={cn('flex flex-col items-center gap-2 group', designState.material?.id === m.id ? 'text-primary' : '')}>
+                                <div className={cn('w-20 h-20 rounded-full overflow-hidden border-2 transition-all', designState.material?.id === m.id ? 'border-primary' : 'border-border group-hover:border-primary/50')}>
+                                    <Image src={m.imageUrl!} alt={m.name} width={80} height={80} className="object-cover w-full h-full" />
+                                </div>
+                                <span className="text-sm font-body">{m.name}</span>
+                            </button>
+                        ))}
+                    </div>
+                </MotionTabsContent>
+
+                <MotionTabsContent value="hardware" key="hardware" {...motionProps}>
+                    <h3 className="text-xl font-headline mb-4">Customize Hardware</h3>
+                    <div className="space-y-6">
+                        <div>
+                            <h4 className="font-body font-semibold mb-2">Style</h4>
+                            <div className="grid grid-cols-3 gap-4">
+                            {hardware.map((h) => (
+                                <button type="button" key={h.id} onClick={() => updateDesign({ hardware: h })} className={cn('p-2 border-2 rounded-lg flex flex-col items-center gap-2 transition-all', designState.hardware?.id === h.id ? 'border-primary shadow-md' : 'border-transparent hover:border-primary/50')}>
+                                    {h.icon && <Icon name={h.icon} className="w-12 h-12" />}
+                                    <span className="text-sm font-body">{h.name}</span>
                                 </button>
                             ))}
+                            </div>
                         </div>
-                    </motion.div>
-                </TabsContent>
-
-                <TabsContent value="material" asChild>
-                    <motion.div key="material" initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }}>
-                        <h3 className="text-xl font-headline mb-4">Select Material</h3>
-                         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-                            {materials.map((m) => (
-                                <button type="button" key={m.id} onClick={() => updateDesign({ material: m })} className={cn('flex flex-col items-center gap-2 group', designState.material?.id === m.id ? 'text-primary' : '')}>
-                                    <div className={cn('w-20 h-20 rounded-full overflow-hidden border-2 transition-all', designState.material?.id === m.id ? 'border-primary' : 'border-border group-hover:border-primary/50')}>
-                                        <Image src={m.imageUrl!} alt={m.name} width={80} height={80} className="object-cover w-full h-full" />
-                                    </div>
-                                    <span className="text-sm font-body">{m.name}</span>
-                                </button>
-                            ))}
-                        </div>
-                    </motion.div>
-                </TabsContent>
-
-                <TabsContent value="hardware" asChild>
-                    <motion.div key="hardware" initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }}>
-                        <h3 className="text-xl font-headline mb-4">Customize Hardware</h3>
-                        <div className="space-y-6">
-                            <div>
-                                <h4 className="font-body font-semibold mb-2">Style</h4>
-                                <div className="grid grid-cols-3 gap-4">
-                                {hardware.map((h) => (
-                                    <button type="button" key={h.id} onClick={() => updateDesign({ hardware: h })} className={cn('p-2 border-2 rounded-lg flex flex-col items-center gap-2 transition-all', designState.hardware?.id === h.id ? 'border-primary shadow-md' : 'border-transparent hover:border-primary/50')}>
-                                        {h.icon && <Icon name={h.icon} className="w-12 h-12" />}
-                                        <span className="text-sm font-body">{h.name}</span>
-                                    </button>
+                        <div>
+                            <h4 className="font-body font-semibold mb-2">Color</h4>
+                            <div className="flex gap-2">
+                                {hardwareColors.map((c) => (
+                                    <button type="button" key={c.name} onClick={() => updateDesign({ hardwareColor: c })} className={cn('w-10 h-10 rounded-full border-2 transition-all', designState.hardwareColor?.name === c.name ? 'border-primary' : 'border-border')} style={{backgroundColor: c.value}} aria-label={c.name} />
                                 ))}
-                                </div>
-                            </div>
-                            <div>
-                                <h4 className="font-body font-semibold mb-2">Color</h4>
-                                <div className="flex gap-2">
-                                    {hardwareColors.map((c) => (
-                                        <button type="button" key={c.name} onClick={() => updateDesign({ hardwareColor: c })} className={cn('w-10 h-10 rounded-full border-2 transition-all', designState.hardwareColor?.name === c.name ? 'border-primary' : 'border-border')} style={{backgroundColor: c.value}} aria-label={c.name} />
-                                    ))}
-                                </div>
                             </div>
                         </div>
-                    </motion.div>
-                </TabsContent>
+                    </div>
+                </MotionTabsContent>
 
-                <TabsContent value="stitching" asChild>
-                  <motion.div key="stitching" initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }}>
-                      <h3 className="text-xl font-headline mb-4">Refine The Stitching</h3>
-                      <div className="space-y-6">
-                          <div>
-                              <h4 className="font-body font-semibold mb-2">Style</h4>
-                              <div className="grid grid-cols-3 gap-4">
-                                  {stitching.map((s) => (
-                                      <button type="button" key={s.id} onClick={() => updateDesign({ stitching: s })} className={cn('p-2 border-2 rounded-lg flex flex-col items-center gap-2 transition-all', designState.stitching?.id === s.id ? 'border-primary shadow-md' : 'border-transparent hover:border-primary/50')}>
-                                          {s.icon && <Icon name={s.icon} className="w-12 h-12" />}
-                                          <span className="text-sm font-body">{s.name}</span>
-                                      </button>
-                                  ))}
-                              </div>
-                          </div>
-                          <div>
-                              <h4 className="font-body font-semibold mb-2">Color</h4>
-                              <div className="flex flex-wrap gap-2">
-                                  {stitchingColors.map((c) => (
-                                      <button type="button" key={c.name} onClick={() => updateDesign({ stitchingColor: c })} className={cn('w-10 h-10 rounded-full border-2 transition-all', designState.stitchingColor?.name === c.name ? 'border-primary' : 'border-border')} style={{backgroundColor: c.value}} aria-label={c.name} />
-                                  ))}
-                              </div>
+                <MotionTabsContent value="stitching" key="stitching" {...motionProps}>
+                  <h3 className="text-xl font-headline mb-4">Refine The Stitching</h3>
+                  <div className="space-y-6">
+                      <div>
+                          <h4 className="font-body font-semibold mb-2">Style</h4>
+                          <div className="grid grid-cols-3 gap-4">
+                              {stitching.map((s) => (
+                                  <button type="button" key={s.id} onClick={() => updateDesign({ stitching: s })} className={cn('p-2 border-2 rounded-lg flex flex-col items-center gap-2 transition-all', designState.stitching?.id === s.id ? 'border-primary shadow-md' : 'border-transparent hover:border-primary/50')}>
+                                      {s.icon && <Icon name={s.icon} className="w-12 h-12" />}
+                                      <span className="text-sm font-body">{s.name}</span>
+                                  </button>
+                              ))}
                           </div>
                       </div>
-                  </motion.div>
-                </TabsContent>
+                      <div>
+                          <h4 className="font-body font-semibold mb-2">Color</h4>
+                          <div className="flex flex-wrap gap-2">
+                              {stitchingColors.map((c) => (
+                                  <button type="button" key={c.name} onClick={() => updateDesign({ stitchingColor: c })} className={cn('w-10 h-10 rounded-full border-2 transition-all', designState.stitchingColor?.name === c.name ? 'border-primary' : 'border-border')} style={{backgroundColor: c.value}} aria-label={c.name} />
+                              ))}
+                          </div>
+                      </div>
+                  </div>
+                </MotionTabsContent>
               </AnimatePresence>
             </Tabs>
             
