@@ -56,10 +56,10 @@ function HeroSection() {
 
 function PortfolioSection() {
   return (
-    <section id="portfolio" className="py-12 md:py-24">
+    <section id="portfolio" className="py-12 md:py-24 bg-white/10 backdrop-blur-lg">
       <div className="container mx-auto px-4 md:px-6">
-        <h2 className="text-3xl font-bold text-center mb-2 font-headline text-white">Our Masterpieces</h2>
-        <p className="text-center text-white/80 mb-8">Each handbag in our portfolio is a testament to our commitment to quality and craftsmanship.</p>
+        <h2 className="text-3xl font-bold text-center mb-2 font-headline bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-amber-500">Our Masterpieces</h2>
+        <p className="text-center text-2xl font-allura mb-8 bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-amber-500 max-w-3xl mx-auto">Each handbag in our portfolio is a testament to our commitment to quality and craftsmanship.</p>
         <div className="masonry">
           {portfolio.map((item) => (
             <PortfolioItem key={item.id} image={item} />
