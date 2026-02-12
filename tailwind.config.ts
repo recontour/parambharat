@@ -24,6 +24,7 @@ export default {
         bharat: ['Satisfy', 'cursive'],
         pinyon: ['Pinyon Script', 'cursive'],
         allura: ['Allura', 'cursive'],
+        "roboto-flex": ['Roboto Flex', 'sans-serif'],
       },
       colors: {
         background: 'hsl(var(--background))',

@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { AppFooter } from "@/components/AppFooter";
@@ -8,6 +9,7 @@ import { portfolio } from "@/lib/data";
 import { Instagram, Mail, Phone } from "lucide-react";
 import Image from "next/image";
 import * as React from "react";
+import { FaWhatsapp } from "react-icons/fa";
 
 function HeroSection() {
   return (
@@ -23,7 +25,7 @@ function HeroSection() {
         />
       </div>
       <div className="absolute left-1/2 -translate-x-1/2 z-10 text-center" style={{ top: 'calc(7rem + 200px + 2.5rem)' }}>
-        <h2 className="text-xl font-quintessential bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-amber-500">Crafted with Passion</h2>
+        <h2 className="text-xl font-roboto-flex bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-amber-500">Crafted with Passion</h2>
       </div>
       <div className="absolute inset-x-0 flex items-center justify-center" style={{ top: 'calc(7rem + 200px + 5.5rem)', bottom: 0 }}>
         <div className="container mx-auto px-4 md:px-6 text-center">
@@ -32,11 +34,17 @@ function HeroSection() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a href="#designer">
-                    <Button size="lg">Start Designing</Button>
+                    <Button size="lg" className="font-roboto-flex bg-white/10 backdrop-blur-lg">
+                        <span className="bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-amber-500">
+                            Start Designing
+                        </span>
+                    </Button>
                 </a>
                 <a href="#portfolio">
-                    <Button size="lg" variant="ghost" className="text-white hover:bg-white/10 hover:text-white">
-                        Explore The Gallery
+                    <Button size="lg" className="font-roboto-flex bg-white/10 backdrop-blur-lg">
+                        <span className="bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-amber-500">
+                            Explore The Gallery
+                        </span>
                     </Button>
                 </a>
             </div>
@@ -123,6 +131,19 @@ export default function Home() {
         {/* <ContactSection /> */}
       </main>
       <AppFooter />
+      <a
+        href="https://wa.me/917249337622"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed bottom-4 right-4 z-20"
+      >
+        <Button
+          size="icon"
+          className="bg-transparent text-yellow-400 hover:bg-transparent"
+        >
+          <FaWhatsapp size={40} />
+        </Button>
+      </a>
     </div>
   );
 }
