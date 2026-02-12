@@ -18,7 +18,7 @@ export function AppHeader() {
           href="#"
           className="text-foreground transition-colors hover:text-foreground font-bold text-lg"
         >
-          <span className="font-param">Param</span> <span className="font-bharat">Bharat</span>
+          <span className="font-param text-black">Param</span> <span className="font-bharat text-black">Bharat</span>
         </Link>
         <Link
           href="#portfolio"
@@ -47,7 +47,7 @@ export function AppHeader() {
               className="flex items-center gap-2 text-lg font-semibold"
             >
               <Package2 className="h-6 w-6" />
-              <span><span className="font-param">Param</span> <span className="font-bharat">Bharat</span></span>
+              <span><span className="font-param text-black">Param</span> <span className="font-bharat text-black">Bharat</span></span>
             </Link>
             <Link href="#portfolio" className="text-muted-foreground hover:text-foreground">
               Portfolio

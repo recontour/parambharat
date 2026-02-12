@@ -7,7 +7,7 @@ export function AppFooter() {
             <div className="container mx-auto py-6 px-4 md:px-6">
                 <div className="flex flex-col items-center justify-center text-center">
                     <p className="text-sm text-muted-foreground font-body">
-                        &copy; {new Date().getFullYear()} <span className="font-param">Param</span> <span className="font-bharat">Bharat</span>. All rights reserved.
+                        &copy; {new Date().getFullYear()} <span className="font-param text-black">Param</span> <span className="font-bharat text-black">Bharat</span>. All rights reserved.
                     </p>
                     <p className="font-headline text-lg mt-1">
                         Crafted with Passion

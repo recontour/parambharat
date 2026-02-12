@@ -13,7 +13,7 @@ function HeroSection() {
     <section className="w-full py-20 md:py-32 lg:py-40 bg-background">
       <div className="container mx-auto px-4 md:px-6 text-center">
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tighter mb-4">
-          <span className="font-param">Param</span> <span className="font-bharat">Bharat</span>
+          <span className="font-param text-black">Param</span> <span className="font-bharat text-black">Bharat</span>
         </h1>
         <p className="max-w-3xl mx-auto text-muted-foreground md:text-xl lg:text-2xl mb-8 font-body">
           Where your vision of luxury becomes a reality. Craft a handbag that is exclusively yours, from silhouette to the finest stitch.
