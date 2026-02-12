@@ -22,6 +22,8 @@ export default {
         code: ['monospace'],
         param: ['Monoton', 'cursive'],
         bharat: ['Satisfy', 'cursive'],
+        pinyon: ['Pinyon Script', 'cursive'],
+        allura: ['Allura', 'cursive'],
       },
       colors: {
         background: 'hsl(var(--background))',

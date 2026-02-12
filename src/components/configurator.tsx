@@ -14,12 +14,7 @@ import {
   stitching,
   stitchingColors,
   type DesignState,
-  type SilhouetteOption,
-  type MaterialOption,
-  type HardwareOption,
-  type StitchingOption,
 } from '@/lib/data';
-import { BagPreview } from '@/components/bag-preview';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
@@ -29,7 +24,6 @@ import { saveDesign } from '@/app/actions';
 import { useToast } from '@/hooks/use-toast';
 import { Icon } from './icons';
 import { ScrollArea } from './ui/scroll-area';
-import { Card, CardContent } from './ui/card';
 
 const designSchema = z.object({
   silhouette: z.string().min(1, 'Silhouette is required'),
@@ -44,16 +38,12 @@ type DesignFormData = z.infer<typeof designSchema>;
 
 const MotionTabsContent = motion(TabsContent);
 
-export function Configurator() {
-  const [designState, setDesignState] = useState<DesignState>({
-    silhouette: silhouettes[0],
-    material: materials[0],
-    hardware: hardware[0],
-    hardwareColor: hardwareColors[1],
-    stitching: stitching[0],
-    stitchingColor: stitchingColors[0],
-  });
+interface ConfiguratorProps {
+  designState: DesignState;
+  setDesignState: React.Dispatch<React.SetStateAction<DesignState>>;
+}
 
+export function Configurator({ designState, setDesignState }: ConfiguratorProps) {
   const [isSaving, setIsSaving] = useState(false);
   const { toast } = useToast();
 
@@ -109,21 +99,6 @@ export function Configurator() {
   return (
     <FormProvider {...methods}>
       <form onSubmit={methods.handleSubmit(handleSave)}>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 xl:gap-16">
-          <div className="relative flex items-center justify-center p-4 rounded-lg">
-            <AnimatePresence>
-                <motion.div
-                    key={designState.silhouette?.id}
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.9 }}
-                    transition={{ duration: 0.3 }}
-                    className="w-full max-w-md mx-auto"
-                >
-                    <BagPreview design={designState} />
-                </motion.div>
-            </AnimatePresence>
-          </div>
           <div className="flex flex-col">
             <Tabs defaultValue="silhouette" className="w-full">
               <ScrollArea className="w-full">
@@ -221,7 +196,6 @@ export function Configurator() {
               </Button>
             </div>
           </div>
-        </div>
       </form>
     </FormProvider>
   );
