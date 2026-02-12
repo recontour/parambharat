@@ -6,7 +6,6 @@ import { Separator } from '@/components/ui/separator';
 import { AppHeader } from '@/components/header';
 import { AppFooter } from '@/components/footer';
 import { Configurator } from '@/components/configurator';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 function HeroSection() {
   return (
@@ -35,7 +34,11 @@ function HeroSection() {
 }
 
 function PortfolioSection() {
-  const portfolioImages = PlaceHolderImages.filter(img => img.id.startsWith('portfolio-'));
+  const portfolioImages = [
+    { id: 'bag1', imageUrl: '/bag1.jpg', description: 'Yellow Messenger Bag' },
+    { id: 'bag2', imageUrl: '/bag2.jpg', description: 'Close up of bag texture' },
+    { id: 'bag3', imageUrl: '/bag3.jpg', description: 'Bag with strap detail' },
+  ];
 
   return (
     <section id="portfolio" className="w-full py-16 md:py-24 bg-secondary/50">
@@ -55,7 +58,6 @@ function PortfolioSection() {
                     width={600}
                     height={800}
                     className="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105"
-                    data-ai-hint={image.imageHint}
                   />
                   <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors" />
                 </div>
@@ -73,7 +75,6 @@ function PortfolioSection() {
                         alt={image.description}
                         fill
                         className="object-cover"
-                        data-ai-hint={image.imageHint}
                     />
                 </div>
               </DialogContent>
