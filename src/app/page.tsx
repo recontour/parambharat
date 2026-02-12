@@ -9,13 +9,13 @@ import { Configurator } from '@/components/configurator';
 
 function HeroSection() {
   return (
-    <section className="w-full py-20 md:py-32 lg:py-40 bg-background">
+    <section className="w-full py-10 md:py-32 lg:py-40 bg-background">
       <div className="container mx-auto px-4 md:px-6 text-center">
         <Image
-          src="/param-bharat-logo.png"
+          src="/logo.png"
           alt="Param Bharat Logo"
-          width={250}
-          height={250}
+          width={100}
+          height={100}
           className="mx-auto mb-6"
           priority
         />
