@@ -112,8 +112,8 @@ export default function Home() {
         <HeroSection />
         <Separator />
         <PortfolioSection />
-        <Separator />
-        <DesignSection />
+        {/* <Separator /> */}
+        {/* <DesignSection /> */}
       </main>
       <AppFooter />
     </div>
