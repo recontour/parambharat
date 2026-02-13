@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
-import { Menu, Package2 } from "lucide-react";
+import { Menu } from "lucide-react";
 
 export function AppHeader() {
   return (
@@ -9,28 +9,25 @@ export function AppHeader() {
       <nav className="hidden flex-col gap-6 text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6">
         <Link
           href="#"
-          className="flex items-center gap-2 text-lg font-semibold md:text-base font-headline"
-        >
-          <Package2 className="h-6 w-6 text-white" />
-          <span className="sr-only">PARAM Bharat</span>
-        </Link>
-        <Link
-          href="#"
-          className="text-white transition-colors hover:text-white font-normal text-lg"
+          className="font-roboto-flex font-normal text-lg bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-amber-500"
         >
           <span className="font-param">PARAM</span> <span className="font-bharat">Bharat</span>
         </Link>
         <Link
           href="#portfolio"
-          className="text-gray-300 transition-colors hover:text-white"
+          className="font-roboto-flex rounded-md bg-white/10 backdrop-blur-lg px-4 py-2"
         >
-          Portfolio
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-amber-500">
+            Portfolio
+          </span>
         </Link>
         <Link
           href="#designer"
-          className="text-gray-300 transition-colors hover:text-white"
+          className="font-roboto-flex rounded-md bg-white/10 backdrop-blur-lg px-4 py-2"
         >
-          Designer
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-amber-500">
+            Designer
+          </span>
         </Link>
       </nav>
       <Sheet>
@@ -44,22 +41,27 @@ export function AppHeader() {
           <nav className="grid gap-6 text-lg font-medium">
             <Link
               href="#"
-              className="flex items-center gap-2 text-lg font-semibold text-white"
+              className="flex items-center gap-2 text-lg font-semibold"
             >
-              <Package2 className="h-6 w-6" />
-              <span><span className="font-param">PARAM</span> <span className="font-bharat">Bharat</span></span>
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-amber-500"><span className="font-param">PARAM</span> <span className="font-bharat">Bharat</span></span>
             </Link>
-            <Link href="#portfolio" className="text-gray-300 hover:text-white">
+            <Link href="#portfolio" className="font-roboto-flex bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-amber-500">
               Portfolio
             </Link>
-            <Link href="#designer" className="text-gray-300 hover:text-white">
+            <Link href="#designer" className="font-roboto-flex bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-amber-500">
               Designer
             </Link>
           </nav>
         </SheetContent>
       </Sheet>
       <div className="flex w-full items-center justify-end gap-4 md:ml-auto md:gap-2 lg:gap-4">
-        <Button className="bg-white text-black hover:bg-gray-200">Start Designing</Button>
+        <a href="#designer">
+            <Button size="lg" className="font-roboto-flex bg-white/10 backdrop-blur-lg">
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-amber-500">
+                    Start Designing
+                </span>
+            </Button>
+        </a>
       </div>
     </header>
   );
