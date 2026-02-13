@@ -32,12 +32,12 @@ export function AppHeader() {
       </nav>
       <Sheet>
         <SheetTrigger asChild>
-          <Button variant="outline" size="icon" className="shrink-0 md:hidden bg-transparent border-gray-400 text-gray-400 hover:bg-white/10 hover:text-white">
+          <Button variant="outline" size="icon" className="shrink-0 md:hidden bg-transparent border-yellow-400 text-yellow-400 hover:bg-white/10 hover:text-white">
             <Menu className="h-5 w-5" />
             <span className="sr-only">Toggle navigation menu</span>
           </Button>
         </SheetTrigger>
-        <SheetContent side="left" className="bg-black/80 backdrop-blur-lg border-r-white/20">
+        <SheetContent side="left" className="bg-black/80 backdrop-blur-lg border-r-yellow-400/20">
           <nav className="grid gap-6 text-lg font-medium">
             <Link
               href="#"
