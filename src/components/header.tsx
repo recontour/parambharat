@@ -16,7 +16,7 @@ export function AppHeader() {
         </Link>
         <Link
           href="#portfolio"
-          className="font-roboto-flex rounded-md bg-white/10 backdrop-blur-lg px-4 py-2"
+          className="font-allura rounded-md bg-white/10 backdrop-blur-lg px-4 py-1 text-2xl"
         >
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-amber-500">
             Portfolio
@@ -24,7 +24,7 @@ export function AppHeader() {
         </Link>
         <Link
           href="#designer"
-          className="font-roboto-flex rounded-md bg-white/10 backdrop-blur-lg px-4 py-2"
+          className="font-allura rounded-md bg-white/10 backdrop-blur-lg px-4 py-1 text-2xl"
         >
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-amber-500">
             Designer
@@ -47,10 +47,10 @@ export function AppHeader() {
               <span className="font-param bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-amber-500">PARAM</span>
               <span className="font-bharat bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-amber-500">Bharat</span>
             </Link>
-            <Link href="#portfolio" className="font-roboto-flex bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-amber-500">
+            <Link href="#portfolio" className="font-allura text-3xl bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-amber-500">
               Portfolio
             </Link>
-            <Link href="#designer" className="font-roboto-flex bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-amber-500">
+            <Link href="#designer" className="font-allura text-3xl bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-amber-500">
               Designer
             </Link>
           </nav>
@@ -58,8 +58,8 @@ export function AppHeader() {
       </Sheet>
       <div className="flex w-full items-center justify-end gap-4 md:ml-auto md:gap-2 lg:gap-4">
         <a href="#designer">
-            <Button size="lg" className="font-roboto-flex bg-white/10 backdrop-blur-lg">
-                <span className="bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-amber-500">
+            <Button size="lg" className="bg-white/10 backdrop-blur-lg h-10 px-6">
+                <span className="font-allura text-2xl bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-amber-500">
                     Start Designing
                 </span>
             </Button>
