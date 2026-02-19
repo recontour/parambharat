@@ -9,9 +9,10 @@ export function AppHeader() {
       <nav className="hidden flex-col gap-6 text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6">
         <Link
           href="#"
-          className="font-roboto-flex font-normal text-lg bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-amber-500"
+          className="flex items-center gap-1 text-xl"
         >
-          <span className="font-param">PARAM</span> <span className="font-bharat">Bharat</span>
+          <span className="font-param bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-amber-500">PARAM</span>
+          <span className="font-bharat bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-amber-500">Bharat</span>
         </Link>
         <Link
           href="#portfolio"
@@ -41,9 +42,10 @@ export function AppHeader() {
           <nav className="grid gap-6 text-lg font-medium">
             <Link
               href="#"
-              className="flex items-center gap-2 text-lg font-semibold"
+              className="flex items-center gap-1 text-xl"
             >
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-amber-500"><span className="font-param">PARAM</span> <span className="font-bharat">Bharat</span></span>
+              <span className="font-param bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-amber-500">PARAM</span>
+              <span className="font-bharat bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-amber-500">Bharat</span>
             </Link>
             <Link href="#portfolio" className="font-roboto-flex bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-amber-500">
               Portfolio

@@ -1,5 +1,5 @@
 import { Icons, ToteBagPath, CrossbodyBagPath, ClutchBagPath } from "@/components/icons";
-import type { SVGProps } from "react";
+import type { SVGProps, ReactNode } from "react";
 
 export interface DesignOption {
   id: string;
@@ -10,7 +10,7 @@ export interface DesignOption {
 }
 
 export interface SilhouetteOption extends DesignOption {
-  path: (props: SVGProps<SVGPathElement>) => JSX.Element;
+  path: (props: SVGProps<SVGPathElement>) => ReactNode;
   stitchingPath: string;
   hardwarePositions: {
     [key: string]: {
@@ -109,38 +109,38 @@ export type DesignState = {
 export const portfolio = [
   {
     id: "1",
-    title: "The Classic Tote",
-    description: "A timeless design crafted from the finest leather.",
+    title: "The Heritage Tote",
+    description: "A masterclass in minimalism, featuring structured lines and premium full-grain leather for the discerning professional.",
     imageUrls: ["/bag1.jpg"],
   },
   {
     id: "2",
-    title: "The City Crossbody",
-    description: "Perfect for on-the-go style and convenience.",
+    title: "The Avenue Crossbody",
+    description: "Effortless versatility meets metropolitan elegance. Designed to transition seamlessly from morning meetings to evening gallery openings.",
     imageUrls: ["/bag2.jpg", "/bag2-side.jpeg"],
   },
   {
     id: "3",
-    title: "The Evening Clutch",
-    description: "An elegant accessory for your most special occasions.",
+    title: "The Midnight Envelope",
+    description: "An exquisite sculptural piece designed to be the crown jewel of your evening attire. Handcrafted for life's most celebrated moments.",
     imageUrls: ["/bag3.jpg"],
   },
-    {
+  {
     id: "4",
-    title: "The Urban Explorer",
-    description: "A durable and stylish canvas bag for everyday adventures.",
+    title: "The Nomad Messenger",
+    description: "Rugged sophistication for the modern wanderer. Merging durable, high-performance canvas with artisanal leather detailing.",
     imageUrls: ["/bag4.jpg"],
   },
   {
     id: "5",
-    title: "The Modern Satchel",
-    description: "Sleek and sophisticated for the modern professional.",
+    title: "The Sovereign Satchel",
+    description: "Commanding and refined. A silhouette that defines authority, balanced with soft-touch textures and impeccable hardware.",
     imageUrls: ["/pang5-front.webp", "/bag5-side.webp"],
   },
   {
     id: "6",
-    title: "The Weekend Getaway",
-    description: "Spacious and stylish, perfect for short trips.",
+    title: "The Grand Horizon",
+    description: "The ultimate companion for the weekend escape. Expansive, elegant, and engineered for those who refuse to compromise on style while traveling.",
     imageUrls: ["/bag6-front.webp", "/bag6-side.webp"],
   }
 ];

@@ -74,9 +74,15 @@ export function PortfolioItem({ image }: PortfolioItemProps) {
         </div>
       )}
 
-      <div className="text-center mt-4 px-2">
-        <h3 className="text-xl font-bold mb-1 bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-amber-500">{image.title}</h3>
-        <p className="text-2xl font-allura bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-amber-500/80">{image.description}</p>
+      <div className="mt-4 px-2">
+        <h3 className="text-xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-amber-500 text-center">{image.title}</h3>
+        
+        <div className="flex items-stretch gap-3">
+          <div className="w-0.5 rounded-full bg-gradient-to-b from-yellow-400 to-amber-500 shrink-0" />
+          <p className="text-xl font-allura bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-amber-500/80 text-left">
+            {image.description}
+          </p>
+        </div>
       </div>
     </div>
   )

@@ -29,15 +29,15 @@ function HeroSection() {
       {/* Buttons Row centered */}
       <div className="flex flex-row gap-4 w-full md:w-auto mb-6 md:mb-8 justify-center">
         <a href="#portfolio" className="flex-1 sm:flex-none">
-          <Button size="sm" className="font-roboto-flex bg-white/10 backdrop-blur-lg w-full h-12 md:h-14 text-xs md:text-lg px-4 md:px-8">
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-amber-500 whitespace-nowrap">
+          <Button size="sm" className="bg-white/10 backdrop-blur-lg w-full h-12 md:h-14 px-4 md:px-8">
+            <span className="font-allura text-2xl md:text-3xl bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-amber-500 whitespace-nowrap">
               Explore Gallery
             </span>
           </Button>
         </a>
         <a href="#designer" className="flex-1 sm:flex-none">
-          <Button size="sm" className="font-roboto-flex bg-white/10 backdrop-blur-lg w-full h-12 md:h-14 text-xs md:text-lg px-4 md:px-8">
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-amber-500 whitespace-nowrap">
+          <Button size="sm" className="bg-white/10 backdrop-blur-lg w-full h-12 md:h-14 px-4 md:px-8">
+            <span className="font-allura text-2xl md:text-3xl bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-amber-500 whitespace-nowrap">
               Start Designing
             </span>
           </Button>
@@ -54,7 +54,7 @@ function HeroSection() {
         {/* Description with vertical line next to it only */}
         <div className="flex items-stretch gap-4 md:gap-8 max-w-4xl">
           <div className="w-1 md:w-2 rounded-full bg-gradient-to-b from-yellow-400 to-amber-500 shrink-0" />
-          <p className="text-4xl md:text-7xl font-allura bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-amber-500/80 leading-tight text-left">
+          <p className="text-4xl md:text-7xl font-allura bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-amber-500/80 leading-tight text-left py-4">
             Where your vision of luxury becomes a reality. Craft a handbag that is exclusively yours, from silhouette to the finest stitch.
           </p>
         </div>
@@ -67,8 +67,15 @@ function PortfolioSection() {
   return (
     <section id="portfolio" className="py-12 md:py-24 bg-white/10 backdrop-blur-lg">
       <div className="container mx-auto px-4 md:px-6">
-        <h2 className="text-3xl font-bold text-center mb-2 font-headline bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-amber-500">Our Masterpieces</h2>
-        <p className="text-center text-2xl font-allura mb-8 bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-amber-500 max-w-3xl mx-auto">Each handbag in our portfolio is a testament to our commitment to quality and craftsmanship.</p>
+        <h2 className="text-3xl font-bold text-center mb-8 font-headline bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-amber-500">Our Masterpieces</h2>
+        
+        <div className="flex items-stretch gap-4 md:gap-6 max-w-3xl mx-auto mb-12">
+          <div className="w-1 rounded-full bg-gradient-to-b from-yellow-400 to-amber-500 shrink-0" />
+          <p className="text-left text-2xl font-allura bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-amber-500">
+            Each handbag in our portfolio is a testament to our commitment to quality and craftsmanship.
+          </p>
+        </div>
+
         <div className="masonry">
           {portfolio.map((item) => (
             <PortfolioItem key={item.id} image={item} />
