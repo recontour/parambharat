@@ -1,3 +1,4 @@
+"use client";
 
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
@@ -10,12 +11,21 @@ import { Instagram, Mail, Phone } from "lucide-react";
 import Image from "next/image";
 import * as React from "react";
 import { FaWhatsapp } from "react-icons/fa";
+import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 
 function HeroSection() {
+  const { scrollY } = useScroll();
+  const y1 = useTransform(scrollY, [0, 500], [0, 100]);
+  const y2 = useTransform(scrollY, [0, 500], [0, -50]);
+  const opacity = useTransform(scrollY, [0, 300], [1, 0]);
+
   return (
-    <section className="relative w-full min-h-[100dvh] flex flex-col items-center p-4 md:p-8">
+    <section className="relative w-full min-h-[100dvh] flex flex-col items-center p-4 md:p-8 overflow-hidden">
       {/* Top Section: Logo centered */}
-      <div className="mt-4 md:mt-8 mb-6 md:mb-8">
+      <motion.div 
+        style={{ y: y1, opacity }}
+        className="mt-4 md:mt-8 mb-6 md:mb-8 z-10"
+      >
         <Image
           src="/logo (2).png"
           alt="Param Bharat Logo"
@@ -24,61 +34,104 @@ function HeroSection() {
           priority
           className="rounded-xl shadow-2xl"
         />
-      </div>
+      </motion.div>
 
       {/* Buttons Row centered */}
-      <div className="flex flex-row gap-4 w-full md:w-auto mb-6 md:mb-8 justify-center">
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+        viewport={{ once: true }}
+        className="flex flex-row gap-4 w-full md:w-auto mb-6 md:mb-8 justify-center z-10"
+      >
         <a href="#portfolio" className="flex-1 sm:flex-none">
-          <Button size="sm" className="bg-white/10 backdrop-blur-lg w-full h-12 md:h-14 px-4 md:px-8">
+          <Button size="sm" className="bg-white/10 backdrop-blur-lg w-full h-12 md:h-14 px-4 md:px-8 border border-white/20">
             <span className="font-allura text-2xl md:text-3xl bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-amber-500 whitespace-nowrap">
               Explore Gallery
             </span>
           </Button>
         </a>
         <a href="#designer" className="flex-1 sm:flex-none">
-          <Button size="sm" className="bg-white/10 backdrop-blur-lg w-full h-12 md:h-14 px-4 md:px-8">
+          <Button size="sm" className="bg-white/10 backdrop-blur-lg w-full h-12 md:h-14 px-4 md:px-8 border border-white/20">
             <span className="font-allura text-2xl md:text-3xl bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-amber-500 whitespace-nowrap">
               Start Designing
             </span>
           </Button>
         </a>
-      </div>
+      </motion.div>
 
       {/* Text Section: Tagline and Description */}
-      <div className="w-full max-w-4xl flex flex-col items-center gap-6 md:gap-8 mb-12">
+      <motion.div 
+        style={{ y: y2 }}
+        className="w-full max-w-4xl flex flex-col items-center gap-6 md:gap-8 mb-12 z-10"
+      >
         {/* Tagline centered */}
-        <h2 className="text-2xl md:text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-amber-500 text-center">
+        <motion.h2 
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="text-2xl md:text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-amber-500 text-center"
+        >
           Crafted with Passion
-        </h2>
+        </motion.h2>
         
         {/* Description with vertical line next to it only */}
-        <div className="flex items-stretch gap-4 md:gap-8 max-w-4xl">
+        <motion.div 
+          initial={{ opacity: 0, x: -20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1, delay: 0.3 }}
+          viewport={{ once: true }}
+          className="flex items-stretch gap-4 md:gap-8 max-w-4xl"
+        >
           <div className="w-1 md:w-2 rounded-full bg-gradient-to-b from-yellow-400 to-amber-500 shrink-0" />
           <p className="text-4xl md:text-7xl font-allura bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-amber-500/80 leading-tight text-left py-4">
             Where your vision of luxury becomes a reality. Craft a handbag that is exclusively yours, from silhouette to the finest stitch.
           </p>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 }
 
 function PortfolioSection() {
   return (
-    <section id="portfolio" className="py-12 md:py-24 bg-white/10 backdrop-blur-lg">
-      <div className="container mx-auto px-4 md:px-6">
-        <h2 className="text-3xl font-bold text-center mb-8 font-headline bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-amber-500">Our Masterpieces</h2>
+    <section id="portfolio" className="py-12 md:py-24 bg-white/10 backdrop-blur-lg relative overflow-hidden">
+      <div className="container mx-auto px-4 md:px-6 relative z-10">
+        <motion.h2 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true, margin: "-100px" }}
+          className="text-3xl font-bold text-center mb-8 font-headline bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-amber-500"
+        >
+          Our Masterpieces
+        </motion.h2>
         
-        <div className="flex items-stretch gap-4 md:gap-6 max-w-3xl mx-auto mb-12">
+        <motion.div 
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 0.2 }}
+          viewport={{ once: true }}
+          className="flex items-stretch gap-4 md:gap-6 max-w-3xl mx-auto mb-12"
+        >
           <div className="w-1 rounded-full bg-gradient-to-b from-yellow-400 to-amber-500 shrink-0" />
           <p className="text-left text-2xl font-allura bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-amber-500">
             Each handbag in our portfolio is a testament to our commitment to quality and craftsmanship.
           </p>
-        </div>
+        </motion.div>
 
         <div className="masonry">
-          {portfolio.map((item) => (
-            <PortfolioItem key={item.id} image={item} />
+          {portfolio.map((item, index) => (
+            <motion.div
+              key={item.id}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: (index % 3) * 0.1 }}
+              viewport={{ once: true, margin: "-50px" }}
+            >
+              <PortfolioItem image={item} />
+            </motion.div>
           ))}
         </div>
       </div>
@@ -124,16 +177,26 @@ function ContactSection() {
 
 
 export default function Home() {
+  const { scrollYProgress } = useScroll();
+  const yBg = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
+  const scaleBg = useTransform(scrollYProgress, [0, 1], [1, 1.2]);
+
   return (
     <div className="flex flex-col min-h-screen">
-      <div className="fixed inset-0 -z-10">
-        <Image
-          src="/background.jpg"
-          alt="Background"
-          layout="fill"
-          objectFit="cover"
-          quality={100}
-        />
+      <div className="fixed inset-0 -z-10 overflow-hidden">
+        <motion.div 
+          style={{ y: yBg, scale: scaleBg }}
+          className="absolute inset-0"
+        >
+          <Image
+            src="/background.jpg"
+            alt="Background"
+            layout="fill"
+            objectFit="cover"
+            quality={100}
+            priority
+          />
+        </motion.div>
         <div className="absolute inset-0 bg-black/60" />
       </div>
       <AppHeader />
@@ -147,7 +210,10 @@ export default function Home() {
         {/* <ContactSection /> */}
       </main>
       <AppFooter />
-      <a
+      <motion.a
+        initial={{ scale: 0, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{ delay: 1, type: "spring" }}
         href="https://wa.me/917249337622"
         target="_blank"
         rel="noopener noreferrer"
@@ -159,7 +225,7 @@ export default function Home() {
         >
           <FaWhatsapp size={40} />
         </Button>
-      </a>
+      </motion.a>
     </div>
   );
 }
