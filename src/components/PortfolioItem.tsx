@@ -7,8 +7,6 @@ import {
   Carousel, 
   CarouselContent, 
   CarouselItem, 
-  CarouselNext, 
-  CarouselPrevious,
   type CarouselApi
 } from '@/components/ui/carousel';
 
@@ -17,6 +15,7 @@ interface PortfolioItemProps {
     id: string;
     imageUrls: string[];
     description: string;
+    title: string;
   };
 }
 
@@ -36,42 +35,49 @@ export function PortfolioItem({ image }: PortfolioItemProps) {
   }, [api]);
 
   return (
-    <div className="masonry-item">
-      <Card className="overflow-hidden">
+    <div className="masonry-item w-full">
+      <Card className="rounded-lg border bg-card text-card-foreground shadow-sm overflow-hidden border-white/10 bg-white/5 backdrop-blur-sm">
         <CardContent className="p-0">
-          <Carousel setApi={setApi}>
+          <Carousel setApi={setApi} className="w-full">
             <CarouselContent>
               {image.imageUrls.map((url, index) => (
                 <CarouselItem key={index}>
-                  <Image
-                    src={url}
-                    alt={image.description}
-                    width={500}
-                    height={500}
-                    className="w-full h-auto"
-                  />
+                  <div className="relative aspect-[4/5] w-full overflow-hidden bg-black/20">
+                    <Image
+                      src={url}
+                      alt={`${image.title} - Image ${index + 1}`}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    />
+                  </div>
                 </CarouselItem>
               ))}
             </CarouselContent>
-            {image.imageUrls.length > 1 && (
-              <>
-                <CarouselPrevious className="absolute top-1/2 left-4 -translate-y-1/2 z-10" />
-                <CarouselNext className="absolute top-1/2 right-4 -translate-y-1/2 z-10" />
-              </>
-            )}
           </Carousel>
         </CardContent>
       </Card>
-      <div className="flex justify-center mt-2">
-        {image.imageUrls.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => api?.scrollTo(index)}
-            className={`w-2 h-2 rounded-full mx-1 ${index === selectedIndex ? 'bg-white' : 'bg-white/50'}`}
-          />
-        ))}
+      
+      {/* Pagination Indicator */}
+      {image.imageUrls.length > 1 && (
+        <div className="flex justify-center mt-3 gap-2">
+          {image.imageUrls.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => api?.scrollTo(index)}
+              className={`h-1.5 transition-all duration-300 rounded-full ${
+                index === selectedIndex ? 'w-6 bg-yellow-400' : 'w-2 bg-white/30'
+              }`}
+              aria-label={`Go to image ${index + 1}`}
+            />
+          ))}
+        </div>
+      )}
+
+      <div className="text-center mt-4 px-2">
+        <h3 className="text-xl font-bold mb-1 bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-amber-500">{image.title}</h3>
+        <p className="text-2xl font-allura bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-amber-500/80">{image.description}</p>
       </div>
-      <p className="text-sm text-white/80 mt-2 text-center">{image.description}</p>
     </div>
   )
 }

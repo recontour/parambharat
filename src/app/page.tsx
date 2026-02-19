@@ -13,41 +13,50 @@ import { FaWhatsapp } from "react-icons/fa";
 
 function HeroSection() {
   return (
-    <section className="relative w-full h-[100dvh]">
-      <div className="absolute top-28 left-1/2 -translate-x-1/2 z-10">
+    <section className="relative w-full min-h-[100dvh] flex flex-col items-center p-4 md:p-8">
+      {/* Top Section: Logo centered */}
+      <div className="mt-4 md:mt-8 mb-6 md:mb-8">
         <Image
           src="/logo (2).png"
           alt="Param Bharat Logo"
           width={200}
           height={200}
           priority
-          className="rounded-xl"
+          className="rounded-xl shadow-2xl"
         />
       </div>
-      <div className="absolute left-1/2 -translate-x-1/2 z-10 text-center" style={{ top: 'calc(7rem + 200px + 2.5rem)' }}>
-        <h2 className="text-xl font-roboto-flex bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-amber-500">Crafted with Passion</h2>
+
+      {/* Buttons Row centered */}
+      <div className="flex flex-row gap-4 w-full md:w-auto mb-6 md:mb-8 justify-center">
+        <a href="#portfolio" className="flex-1 sm:flex-none">
+          <Button size="sm" className="font-roboto-flex bg-white/10 backdrop-blur-lg w-full h-12 md:h-14 text-xs md:text-lg px-4 md:px-8">
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-amber-500 whitespace-nowrap">
+              Explore Gallery
+            </span>
+          </Button>
+        </a>
+        <a href="#designer" className="flex-1 sm:flex-none">
+          <Button size="sm" className="font-roboto-flex bg-white/10 backdrop-blur-lg w-full h-12 md:h-14 text-xs md:text-lg px-4 md:px-8">
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-amber-500 whitespace-nowrap">
+              Start Designing
+            </span>
+          </Button>
+        </a>
       </div>
-      <div className="absolute inset-x-0 flex items-center justify-center" style={{ top: 'calc(7rem + 200px + 5.5rem)', bottom: 0 }}>
-        <div className="container mx-auto px-4 md:px-6 text-center">
-            <p className="max-w-3xl mx-auto text-2xl mb-8 font-allura bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-amber-500">
-                Where your vision of luxury becomes a reality. Craft a handbag that is exclusively yours, from silhouette to the finest stitch.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="#designer">
-                    <Button size="lg" className="font-roboto-flex bg-white/10 backdrop-blur-lg">
-                        <span className="bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-amber-500">
-                            Start Designing
-                        </span>
-                    </Button>
-                </a>
-                <a href="#portfolio">
-                    <Button size="lg" className="font-roboto-flex bg-white/10 backdrop-blur-lg">
-                        <span className="bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-amber-500">
-                            Explore The Gallery
-                        </span>
-                    </Button>
-                </a>
-            </div>
+
+      {/* Text Section: Tagline and Description */}
+      <div className="w-full max-w-4xl flex flex-col items-center gap-6 md:gap-8 mb-12">
+        {/* Tagline centered */}
+        <h2 className="text-2xl md:text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-amber-500 text-center">
+          Crafted with Passion
+        </h2>
+        
+        {/* Description with vertical line next to it only */}
+        <div className="flex items-stretch gap-4 md:gap-8 max-w-4xl">
+          <div className="w-1 md:w-2 rounded-full bg-gradient-to-b from-yellow-400 to-amber-500 shrink-0" />
+          <p className="text-4xl md:text-7xl font-allura bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-amber-500/80 leading-tight text-left">
+            Where your vision of luxury becomes a reality. Craft a handbag that is exclusively yours, from silhouette to the finest stitch.
+          </p>
         </div>
       </div>
     </section>

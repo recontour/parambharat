@@ -117,7 +117,7 @@ export const portfolio = [
     id: "2",
     title: "The City Crossbody",
     description: "Perfect for on-the-go style and convenience.",
-    imageUrls: ["/bag2.jpg"],
+    imageUrls: ["/bag2.jpg", "/bag2-side.jpeg"],
   },
   {
     id: "3",
@@ -130,5 +130,17 @@ export const portfolio = [
     title: "The Urban Explorer",
     description: "A durable and stylish canvas bag for everyday adventures.",
     imageUrls: ["/bag4.jpg"],
+  },
+  {
+    id: "5",
+    title: "The Modern Satchel",
+    description: "Sleek and sophisticated for the modern professional.",
+    imageUrls: ["/pang5-front.webp", "/bag5-side.webp"],
+  },
+  {
+    id: "6",
+    title: "The Weekend Getaway",
+    description: "Spacious and stylish, perfect for short trips.",
+    imageUrls: ["/bag6-front.webp", "/bag6-side.webp"],
   }
 ];
