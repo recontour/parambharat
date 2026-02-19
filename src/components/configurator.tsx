@@ -36,7 +36,7 @@ const designSchema = z.object({
 
 type DesignFormData = z.infer<typeof designSchema>;
 
-const MotionTabsContent = motion(TabsContent);
+const MotionTabsContent = motion.create(TabsContent);
 
 interface ConfiguratorProps {
   designState: DesignState;

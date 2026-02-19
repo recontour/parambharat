@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetTrigger, SheetHeader, SheetTitle, SheetDescription } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 import { Menu } from "lucide-react";
 
@@ -39,6 +39,12 @@ export function AppHeader() {
           </Button>
         </SheetTrigger>
         <SheetContent side="left" className="bg-black/80 backdrop-blur-lg border-r-yellow-400/20">
+          <SheetHeader className="sr-only">
+            <SheetTitle>Navigation Menu</SheetTitle>
+            <SheetDescription>
+              Access the portfolio and designer sections.
+            </SheetDescription>
+          </SheetHeader>
           <nav className="grid gap-6 text-lg font-medium">
             <Link
               href="#"

@@ -23,25 +23,27 @@ function HeroSection() {
     <section className="relative w-full min-h-[100dvh] flex flex-col items-center p-4 md:p-8 overflow-hidden">
       {/* Top Section: Logo centered */}
       <motion.div 
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
         style={{ y: y1, opacity }}
         className="mt-4 md:mt-8 mb-6 md:mb-8 z-10"
       >
         <Image
           src="/logo (2).png"
           alt="Param Bharat Logo"
-          width={200}
-          height={200}
+          width={130}
+          height={130}
           priority
-          className="rounded-xl shadow-2xl"
+          className="rounded-xl shadow-2xl w-auto h-auto"
         />
       </motion.div>
 
       {/* Buttons Row centered */}
       <motion.div 
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.2 }}
-        viewport={{ once: true }}
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
         className="flex flex-row gap-4 w-full md:w-auto mb-6 md:mb-8 justify-center z-10"
       >
         <a href="#portfolio" className="flex-1 sm:flex-none">
@@ -67,10 +69,9 @@ function HeroSection() {
       >
         {/* Tagline centered */}
         <motion.h2 
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
           className="text-2xl md:text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-amber-500 text-center"
         >
           Crafted with Passion
@@ -78,10 +79,9 @@ function HeroSection() {
         
         {/* Description with vertical line next to it only */}
         <motion.div 
-          initial={{ opacity: 0, x: -20 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1, delay: 0.3 }}
-          viewport={{ once: true }}
+          initial={{ opacity: 0, x: -10 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6, delay: 0.6 }}
           className="flex items-stretch gap-4 md:gap-8 max-w-4xl"
         >
           <div className="w-1 md:w-2 rounded-full bg-gradient-to-b from-yellow-400 to-amber-500 shrink-0" />
@@ -191,8 +191,8 @@ export default function Home() {
           <Image
             src="/background.jpg"
             alt="Background"
-            layout="fill"
-            objectFit="cover"
+            fill
+            className="object-cover"
             quality={100}
             priority
           />
@@ -213,7 +213,7 @@ export default function Home() {
       <motion.a
         initial={{ scale: 0, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
-        transition={{ delay: 1, type: "spring" }}
+        transition={{ delay: 0.5, type: "spring" }}
         href="https://wa.me/917249337622"
         target="_blank"
         rel="noopener noreferrer"

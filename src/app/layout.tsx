@@ -6,7 +6,14 @@ import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
+const baseUrl = process.env.NEXT_PUBLIC_VERCEL_URL 
+  ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}` 
+  : process.env.NEXT_PUBLIC_APP_URL 
+  ? process.env.NEXT_PUBLIC_APP_URL 
+  : "http://localhost:3000";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(baseUrl),
   title: "Param Bharat | Custom Luxury Handbags",
   description: "Where your vision of luxury becomes a reality. Craft a handbag that is exclusively yours, from silhouette to the finest stitch.",
   openGraph: {
