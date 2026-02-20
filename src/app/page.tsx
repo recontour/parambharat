@@ -121,7 +121,7 @@ function PortfolioSection() {
           </p>
         </motion.div>
 
-        <div className="masonry">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {portfolio.map((item, index) => (
             <motion.div
               key={item.id}
@@ -129,6 +129,7 @@ function PortfolioSection() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: (index % 3) * 0.1 }}
               viewport={{ once: true, margin: "-50px" }}
+              className="flex flex-col h-full"
             >
               <PortfolioItem image={item} />
             </motion.div>

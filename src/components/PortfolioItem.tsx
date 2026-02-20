@@ -56,6 +56,23 @@ export function PortfolioItem({ image }: PortfolioItemProps) {
                 </CarouselItem>
               ))}
             </CarouselContent>
+
+            {/* Pagination Indicator Overlay */}
+            {image.imageUrls.length > 1 && (
+              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex justify-center gap-2 z-10">
+                {image.imageUrls.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => api?.scrollTo(index)}
+                    className={`h-1.5 transition-all duration-300 rounded-full ${
+                      index === selectedIndex ? 'w-6 bg-yellow-400' : 'w-2 bg-white/30'
+                    }`}
+                    aria-label={`Go to image ${index + 1}`}
+                  />
+                ))}
+              </div>
+            )}
+
             {/* Navigation Arrows - Only visible on PC/Hover */}
             <div className="hidden md:block">
               <CarouselPrevious className="left-2 bg-black/50 border-none text-white hover:bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -65,22 +82,6 @@ export function PortfolioItem({ image }: PortfolioItemProps) {
         </CardContent>
       </Card>
       
-      {/* Pagination Indicator */}
-      {image.imageUrls.length > 1 && (
-        <div className="flex justify-center mt-3 gap-2">
-          {image.imageUrls.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => api?.scrollTo(index)}
-              className={`h-1.5 transition-all duration-300 rounded-full ${
-                index === selectedIndex ? 'w-6 bg-yellow-400' : 'w-2 bg-white/30'
-              }`}
-              aria-label={`Go to image ${index + 1}`}
-            />
-          ))}
-        </div>
-      )}
-
       <div className="mt-4 px-2">
         <h3 className="text-xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-amber-500 text-center">{image.title}</h3>
         
