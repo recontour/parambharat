@@ -83,6 +83,7 @@ export const hardwareColors: DesignOption[] = [
   { id: 'gold', name: 'Gold', value: '#FFD700' },
   { id: 'silver', name: 'Silver', value: '#C0C0C0' },
   { id: 'bronze', name: 'Bronze', value: '#CD7F32' },
+  { id: 'gunmetal', name: 'Gunmetal', value: '#2a2a2a' },
 ];
 
 export const stitching: StitchingOption[] = [
@@ -109,38 +110,38 @@ export type DesignState = {
 export const portfolio = [
   {
     id: "1",
-    title: "The Heritage Tote",
-    description: "A masterclass in minimalism, featuring structured lines and premium full-grain leather for the discerning professional.",
+    title: "Women crossbody bag",
+    description: "A masterclass in minimalism, featuring structured lines and premium faux leather for the modern woman.",
     imageUrls: ["/bag1a.webp"],
   },
   {
     id: "2",
-    title: "The Avenue Crossbody",
-    description: "Effortless versatility meets metropolitan elegance. Designed to transition seamlessly from morning meetings to evening gallery openings.",
+    title: "Minimalist Wallet",
+    description: "Effortless versatility meets metropolitan elegance. A sleek design crafted from premium faux leather, perfect for carrying your essentials with style.",
     imageUrls: ["/bag2.jpg", "/bag2-side.jpeg"],
   },
   {
     id: "3",
-    title: "The Midnight Envelope",
-    description: "An exquisite sculptural piece designed to be the crown jewel of your evening attire. Handcrafted for life's most celebrated moments.",
+    title: "Canvas Tote Bag",
+    description: "An exquisite sculptural piece designed to be the crown jewel of your collection. Handcrafted from durable canvas for everyday elegance.",
     imageUrls: ["/bag3.jpg"],
   },
   {
     id: "4",
-    title: "The Nomad Messenger",
-    description: "Rugged sophistication for the modern wanderer. Merging durable, high-performance canvas with artisanal leather detailing.",
+    title: "Canvas Tote Bag",
+    description: "Rugged sophistication for the modern wanderer. Merging durable, high-performance canvas with artisanal detailing.",
     imageUrls: ["/bag4.jpg"],
   },
   {
     id: "5",
-    title: "The Sovereign Satchel",
-    description: "Commanding and refined. A silhouette that defines authority, balanced with soft-touch textures and impeccable hardware.",
+    title: "Canvas Duffle / Weekend Bag",
+    description: "Commanding and refined. A spacious silhouette crafted from durable canvas, balanced with soft-touch textures and impeccable hardware.",
     imageUrls: ["/bag5a.webp", "/bag5-side.webp"],
   },
   {
     id: "6",
-    title: "The Grand Horizon",
-    description: "The ultimate companion for the weekend escape. Expansive, elegant, and engineered for those who refuse to compromise on style while traveling.",
+    title: "Document Portfolio",
+    description: "The ultimate companion for the modern professional. Expansive and elegant, engineered from premium faux leather for those who refuse to compromise on style while traveling.",
     imageUrls: ["/bag6-front.webp", "/bag6-side.webp"],
   }
 ];
