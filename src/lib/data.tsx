@@ -111,7 +111,7 @@ export const portfolio = [
     id: "1",
     title: "The Heritage Tote",
     description: "A masterclass in minimalism, featuring structured lines and premium full-grain leather for the discerning professional.",
-    imageUrls: ["/bag1.jpg"],
+    imageUrls: ["/bag1a.webp"],
   },
   {
     id: "2",
@@ -135,7 +135,7 @@ export const portfolio = [
     id: "5",
     title: "The Sovereign Satchel",
     description: "Commanding and refined. A silhouette that defines authority, balanced with soft-touch textures and impeccable hardware.",
-    imageUrls: ["/pang5-front.webp", "/bag5-side.webp"],
+    imageUrls: ["/bag5a.webp", "/bag5-side.webp"],
   },
   {
     id: "6",
