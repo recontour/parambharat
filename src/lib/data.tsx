@@ -111,37 +111,37 @@ export const portfolio = [
   {
     id: "1",
     title: "Women crossbody bag",
-    description: "A masterclass in minimalism, featuring structured lines and premium faux leather for the modern woman.",
+    description: "A masterclass in minimalism, featuring structured lines and premium faux leather. Designed for the modern woman who values style and function.",
     imageUrls: ["/bag1a.webp"],
   },
   {
     id: "2",
     title: "Minimalist Wallet",
-    description: "Effortless versatility meets metropolitan elegance. A sleek design crafted from premium faux leather, perfect for carrying your essentials with style.",
+    description: "Effortless versatility meets metropolitan elegance. A sleek design crafted from premium faux leather, perfect for carrying your daily essentials.",
     imageUrls: ["/bag2.jpg", "/bag2-side.jpeg"],
   },
   {
     id: "3",
     title: "Canvas Tote Bag",
-    description: "An exquisite sculptural piece designed to be the crown jewel of your collection. Handcrafted from durable canvas for everyday elegance.",
+    description: "An exquisite sculptural piece designed to be the crown jewel of your collection. Handcrafted from durable canvas for sophisticated everyday use.",
     imageUrls: ["/bag3.jpg"],
   },
   {
     id: "4",
     title: "Canvas Tote Bag",
-    description: "Rugged sophistication for the modern wanderer. Merging durable, high-performance canvas with artisanal detailing.",
+    description: "Rugged sophistication for the modern wanderer. Merging durable, high-performance canvas with artisanal detailing for a timeless and bold look.",
     imageUrls: ["/bag4.jpg"],
   },
   {
     id: "5",
     title: "Canvas Duffle / Weekend Bag",
-    description: "Commanding and refined. A spacious silhouette crafted from durable canvas, balanced with soft-touch textures and impeccable hardware.",
+    description: "Commanding and refined. A spacious silhouette crafted from durable canvas, balanced with soft-touch textures and premium, high-quality hardware.",
     imageUrls: ["/bag5a.webp", "/bag5-side.webp"],
   },
   {
     id: "6",
     title: "Document Portfolio",
-    description: "The ultimate companion for the modern professional. Expansive and elegant, engineered from premium faux leather for those who refuse to compromise on style while traveling.",
+    description: "The ultimate companion for the modern professional. Expansive and elegant, engineered from premium faux leather for those who travel with style.",
     imageUrls: ["/bag6-front.webp", "/bag6-side.webp"],
   }
 ];
