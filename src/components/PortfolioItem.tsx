@@ -7,6 +7,8 @@ import {
   Carousel, 
   CarouselContent, 
   CarouselItem, 
+  CarouselPrevious,
+  CarouselNext,
   type CarouselApi
 } from '@/components/ui/carousel';
 
@@ -36,7 +38,7 @@ export function PortfolioItem({ image }: PortfolioItemProps) {
 
   return (
     <div className="masonry-item w-full">
-      <Card className="rounded-lg border bg-card text-card-foreground shadow-sm overflow-hidden border-white/10 bg-white/5 backdrop-blur-sm">
+      <Card className="rounded-lg border bg-card text-card-foreground shadow-sm overflow-hidden border-white/10 bg-white/5 backdrop-blur-sm group">
         <CardContent className="p-0">
           <Carousel setApi={setApi} className="w-full">
             <CarouselContent>
@@ -54,6 +56,11 @@ export function PortfolioItem({ image }: PortfolioItemProps) {
                 </CarouselItem>
               ))}
             </CarouselContent>
+            {/* Navigation Arrows - Only visible on PC/Hover */}
+            <div className="hidden md:block">
+              <CarouselPrevious className="left-2 bg-black/50 border-none text-white hover:bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity" />
+              <CarouselNext className="right-2 bg-black/50 border-none text-white hover:bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity" />
+            </div>
           </Carousel>
         </CardContent>
       </Card>
