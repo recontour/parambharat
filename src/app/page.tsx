@@ -25,7 +25,9 @@ function HeroSection() {
     backgroundClip: 'text',
     WebkitBackgroundClip: 'text',
     color: 'transparent',
-    display: 'inline-block'
+    display: 'inline-block',
+    paddingBottom: '0.2em', // Prevent descenders like 'f' from being cut off
+    marginBottom: '-0.2em'
   };
 
   return (
@@ -81,7 +83,7 @@ function HeroSection() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.4 }}
-          className="text-2xl md:text-3xl font-bold text-center"
+          className="text-2xl md:text-3xl font-quintessential font-bold text-center"
         >
           <span style={texturedTextStyle}>Crafted with Passion</span>
         </motion.h2>
@@ -94,7 +96,7 @@ function HeroSection() {
           className="flex items-stretch gap-4 md:gap-8 max-w-4xl"
         >
           <div className="w-1 md:w-2 rounded-full bg-gradient-to-b from-yellow-400 to-amber-500 shrink-0" />
-          <p className="text-4xl md:text-7xl font-allura leading-tight text-left py-4">
+          <p className="text-4xl md:text-7xl font-allura leading-normal text-left py-4">
             <span style={texturedTextStyle}>
               Where your vision of luxury becomes a reality. Craft a handbag that is exclusively yours, from silhouette to the finest stitch.
             </span>
@@ -112,6 +114,9 @@ function PortfolioSection() {
     backgroundClip: 'text',
     WebkitBackgroundClip: 'text',
     color: 'transparent',
+    display: 'inline-block',
+    paddingBottom: '0.15em',
+    marginBottom: '-0.15em'
   };
 
   return (
@@ -122,7 +127,7 @@ function PortfolioSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true, margin: "-100px" }}
-          className="text-3xl font-bold text-center mb-8 font-headline"
+          className="text-3xl md:text-4xl font-quintessential font-bold text-center mb-8"
         >
           <span style={texturedTextStyle}>Our Masterpieces</span>
         </motion.h2>
@@ -135,7 +140,7 @@ function PortfolioSection() {
           className="flex items-stretch gap-4 md:gap-6 max-w-3xl mx-auto mb-12"
         >
           <div className="w-1 rounded-full bg-gradient-to-b from-yellow-400 to-amber-500 shrink-0" />
-          <p className="text-left text-3xl font-allura">
+          <p className="text-left text-2xl md:text-3xl font-allura leading-normal">
             <span style={texturedTextStyle}>
               Each handbag in our portfolio is a testament to our commitment to quality and craftsmanship.
             </span>

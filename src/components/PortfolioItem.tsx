@@ -42,7 +42,9 @@ export function PortfolioItem({ image }: PortfolioItemProps) {
     backgroundClip: 'text',
     WebkitBackgroundClip: 'text',
     color: 'transparent',
-    display: 'inline-block'
+    display: 'inline-block',
+    paddingBottom: '0.2em', // Prevent descenders from being cut off
+    marginBottom: '-0.2em'
   };
 
   return (
@@ -98,7 +100,7 @@ export function PortfolioItem({ image }: PortfolioItemProps) {
         
         <div className="flex items-stretch gap-3">
           <div className="w-0.5 rounded-full bg-gradient-to-b from-yellow-400 to-amber-500 shrink-0" />
-          <p className="text-2xl md:text-3xl font-allura text-left leading-tight">
+          <p className="text-2xl md:text-3xl font-allura text-left leading-normal">
             <span style={texturedTextStyle}>{image.description}</span>
           </p>
         </div>

@@ -21,7 +21,7 @@ export function AppFooter() {
                     </div>
 
                     {/* Tagline: Crafted with Passion in Hero Style */}
-                    <p className="text-lg md:text-xl font-bold mb-6">
+                    <p className="text-lg md:text-xl font-quintessential font-bold mb-6">
                         <span style={texturedTextStyle}>Crafted with Passion</span>
                     </p>
 

@@ -63,6 +63,7 @@ module.exports = {
         quintessential: ["Quintessential", "cursive"],
         alumni: ["Alumni Sans Pinstripe", "sans-serif"],
         "roboto-flex": ["Roboto Flex", "sans-serif"],
+        "bad-script": ["Bad Script", "cursive"],
       },
       keyframes: {
         "accordion-down": {
