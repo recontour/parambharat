@@ -19,6 +19,15 @@ function HeroSection() {
   const y2 = useTransform(scrollY, [0, 500], [0, -50]);
   const opacity = useTransform(scrollY, [0, 300], [1, 0]);
 
+  const texturedTextStyle = {
+    backgroundImage: 'url(/texture.webp)',
+    backgroundSize: 'cover',
+    backgroundClip: 'text',
+    WebkitBackgroundClip: 'text',
+    color: 'transparent',
+    display: 'inline-block'
+  };
+
   return (
     <section className="relative w-full min-h-[100dvh] flex flex-col items-center p-4 md:p-8 overflow-hidden">
       {/* Top Section: Logo centered */}
@@ -48,14 +57,14 @@ function HeroSection() {
       >
         <a href="#portfolio" className="flex-1 sm:flex-none">
           <Button size="sm" className="bg-white/10 backdrop-blur-lg w-full h-12 md:h-14 px-4 md:px-8 border border-white/20">
-            <span className="font-allura text-2xl md:text-3xl bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-amber-500 whitespace-nowrap">
+            <span className="font-allura text-2xl md:text-3xl whitespace-nowrap" style={texturedTextStyle}>
               Explore Gallery
             </span>
           </Button>
         </a>
         <a href="#designer" className="flex-1 sm:flex-none">
           <Button size="sm" className="bg-white/10 backdrop-blur-lg w-full h-12 md:h-14 px-4 md:px-8 border border-white/20">
-            <span className="font-allura text-2xl md:text-3xl bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-amber-500 whitespace-nowrap">
+            <span className="font-allura text-2xl md:text-3xl whitespace-nowrap" style={texturedTextStyle}>
               Start Designing
             </span>
           </Button>
@@ -72,9 +81,9 @@ function HeroSection() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.4 }}
-          className="text-2xl md:text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-amber-500 text-center"
+          className="text-2xl md:text-3xl font-bold text-center"
         >
-          Crafted with Passion
+          <span style={texturedTextStyle}>Crafted with Passion</span>
         </motion.h2>
         
         {/* Description with vertical line next to it only */}
@@ -85,8 +94,10 @@ function HeroSection() {
           className="flex items-stretch gap-4 md:gap-8 max-w-4xl"
         >
           <div className="w-1 md:w-2 rounded-full bg-gradient-to-b from-yellow-400 to-amber-500 shrink-0" />
-          <p className="text-4xl md:text-7xl font-allura bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-amber-500/80 leading-tight text-left py-4">
-            Where your vision of luxury becomes a reality. Craft a handbag that is exclusively yours, from silhouette to the finest stitch.
+          <p className="text-4xl md:text-7xl font-allura leading-tight text-left py-4">
+            <span style={texturedTextStyle}>
+              Where your vision of luxury becomes a reality. Craft a handbag that is exclusively yours, from silhouette to the finest stitch.
+            </span>
           </p>
         </motion.div>
       </motion.div>
@@ -95,6 +106,14 @@ function HeroSection() {
 }
 
 function PortfolioSection() {
+  const texturedTextStyle = {
+    backgroundImage: 'url(/texture.webp)',
+    backgroundSize: 'cover',
+    backgroundClip: 'text',
+    WebkitBackgroundClip: 'text',
+    color: 'transparent',
+  };
+
   return (
     <section id="portfolio" className="py-12 md:py-24 bg-white/10 backdrop-blur-lg relative overflow-hidden">
       <div className="container mx-auto px-4 md:px-6 relative z-10">
@@ -103,9 +122,9 @@ function PortfolioSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true, margin: "-100px" }}
-          className="text-3xl font-bold text-center mb-8 font-headline bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-amber-500"
+          className="text-3xl font-bold text-center mb-8 font-headline"
         >
-          Our Masterpieces
+          <span style={texturedTextStyle}>Our Masterpieces</span>
         </motion.h2>
         
         <motion.div 
@@ -116,8 +135,10 @@ function PortfolioSection() {
           className="flex items-stretch gap-4 md:gap-6 max-w-3xl mx-auto mb-12"
         >
           <div className="w-1 rounded-full bg-gradient-to-b from-yellow-400 to-amber-500 shrink-0" />
-          <p className="text-left text-2xl font-allura bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-amber-500">
-            Each handbag in our portfolio is a testament to our commitment to quality and craftsmanship.
+          <p className="text-left text-3xl font-allura">
+            <span style={texturedTextStyle}>
+              Each handbag in our portfolio is a testament to our commitment to quality and craftsmanship.
+            </span>
           </p>
         </motion.div>
 
