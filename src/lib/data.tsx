@@ -109,37 +109,37 @@ export type DesignState = {
 export const portfolio = [
   {
     id: "1",
-    title: "The Heritage Tote",
+    title: "Women crossbody bag",
     description: "A masterclass in minimalism, featuring structured lines and premium full-grain leather for the discerning professional.",
     imageUrls: ["/bag1a.webp", "/bag1a-side.webp"],
   },
   {
     id: "2",
-    title: "The Avenue Crossbody",
+    title: "Minimalist Wallet",
     description: "Effortless versatility meets metropolitan elegance. Designed to transition seamlessly from morning meetings to evening gallery openings.",
     imageUrls: ["/bag2.jpg", "/bag2-side.jpeg"],
   },
   {
     id: "3",
-    title: "The Midnight Envelope",
+    title: "Canvas Tote Bag",
     description: "An exquisite sculptural piece designed to be the crown jewel of your evening attire. Handcrafted for life's most celebrated moments.",
     imageUrls: ["/bag3.jpg"],
   },
   {
     id: "4",
-    title: "The Nomad Messenger",
+    title: "Canvas Tote Bag",
     description: "Rugged sophistication for the modern wanderer. Merging durable, high-performance canvas with artisanal leather detailing.",
     imageUrls: ["/bag4.jpg"],
   },
   {
     id: "5",
-    title: "The Sovereign Satchel",
+    title: "Canvas Duffle / Weekend Bag",
     description: "Commanding and refined. A silhouette that defines authority, balanced with soft-touch textures and impeccable hardware.",
     imageUrls: ["/bag5a.webp", "/bag5-side.webp"],
   },
   {
     id: "6",
-    title: "The Grand Horizon",
+    title: "Document Portfolio",
     description: "The ultimate companion for the weekend escape. Expansive, elegant, and engineered for those who refuse to compromise on style while traveling.",
     imageUrls: ["/bag6-front.webp", "/bag6-side.webp"],
   }
