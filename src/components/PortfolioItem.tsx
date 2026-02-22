@@ -58,10 +58,20 @@ export function PortfolioItem({ image }: PortfolioItemProps) {
     marginBottom: '-0.2em'
   };
 
-  const upiLink = `upi://pay?pa=indnaturals@okaxis&pn=ParamBharat&am=${image.price}&cu=INR&tn=Order_${image.id}`;
-  const gpayLink = `googlepay://pay?pa=indnaturals@okaxis&pn=ParamBharat&am=${image.price}&cu=INR&tn=Order_${image.id}`;
-  const phonepeLink = `phonepe://pay?pa=indnaturals@okaxis&pn=ParamBharat&am=${image.price}&cu=INR&tn=Order_${image.id}`;
-  const paytmLink = `paytmmp://pay?pa=indnaturals@okaxis&pn=ParamBharat&am=${image.price}&cu=INR&tn=Order_${image.id}`;
+  // Base UPI parameters
+  const pa = "indnaturals@okaxis";
+  const pn = "ParamBharat";
+  const am = image.price.toString();
+  const cu = "INR";
+  const tn = `Order_${image.id}`;
+
+  // Standard UPI Intent (Most reliable for GPay on Android)
+  const upiIntent = `upi://pay?pa=${pa}&pn=${pn}&am=${am}&cu=${cu}&tn=${tn}`;
+  
+  // Specific app package intents for Android/iOS deep linking
+  const gpayLink = `upi://pay?pa=${pa}&pn=${pn}&am=${am}&cu=${cu}&tn=${tn}&mode=02&purpose=00&orgid=159761`;
+  const phonepeLink = `upi://pay?pa=${pa}&pn=${pn}&am=${am}&cu=${cu}&tn=${tn}`;
+  const paytmLink = `upi://pay?pa=${pa}&pn=${pn}&am=${am}&cu=${cu}&tn=${tn}`;
 
   return (
     <div className="masonry-item w-full">
@@ -174,7 +184,7 @@ export function PortfolioItem({ image }: PortfolioItemProps) {
                   variant="outline"
                   className="h-14 rounded-2xl border-white/5 bg-transparent text-zinc-400 font-body text-sm active:scale-[0.98] transition-all"
                 >
-                  <a href={upiLink}>
+                  <a href={upiIntent}>
                     Choose other UPI app
                   </a>
                 </Button>
