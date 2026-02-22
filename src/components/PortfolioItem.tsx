@@ -16,6 +16,7 @@ import { Icons } from '@/components/icons';
 import {
   Dialog,
   DialogContent,
+  DialogDescription,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
@@ -122,6 +123,9 @@ export function PortfolioItem({ image }: PortfolioItemProps) {
                 <DialogTitle className="text-3xl font-headline text-center">
                   <span style={texturedTextStyle}>Checkout</span>
                 </DialogTitle>
+                <DialogDescription className="sr-only">
+                  Choose your preferred payment method to complete the purchase of {image.title} for ₹{image.price}.
+                </DialogDescription>
                 <div className="flex flex-col items-center mt-4">
                   <span className="text-zinc-500 font-body text-xs uppercase tracking-[0.2em]">Payable Amount</span>
                   <span className="text-4xl font-headline font-bold text-yellow-400 mt-1">₹{image.price}</span>
